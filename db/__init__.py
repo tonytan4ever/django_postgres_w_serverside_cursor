@@ -31,7 +31,7 @@ class DefaultConnectionProxy(object):
 
 connection = DefaultConnectionProxy()
 backend = load_backend(connection.settings_dict['ENGINE'])
-backend.DatabaseWrapper = pgServerSideCurorDBWrapper
+#backend.DatabaseWrapper = pgServerSideCurorDBWrapper
 
 # Register an event that closes the database connection
 # when a Django request is finished.
