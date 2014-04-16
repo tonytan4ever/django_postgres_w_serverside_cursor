@@ -22,18 +22,20 @@ If the dataset is too large to be practically handled on the client side, it is 
  1. Check out the folder under your project
  2. Use the following code idiom:
  
-    '''
+    ```
     from <yourproject>.db import connection
     cur = connection.cursor()
     cur.execute(<your_raw_query_statement>)
-    '''
+    ```
 
 
  3. There is also a re-written paginatable QuerySet that works with django's default Paginator:
  
-    from pyserver.common.db.queryset_helper import SmartPaginatableRawQuerySet
+    ```
+    from <yourproject>.db.queryset_helper import SmartPaginatableRawQuerySet
     qr = SmartPaginatableRawQuerySet(<your_raw_query_statement>) 
     pgt = Paginator(qr, <row_per_page>)
     pg = pgt.page(<page_number>)
+    ```
     
  If you have any comments && feature suggests, feel free to leave me an email or message.
